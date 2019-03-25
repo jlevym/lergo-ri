@@ -101,3 +101,5 @@ Enabling such a permissions to someone guarantees that person's ability even if 
  - **abuseReports.userCanDelete** - Whether user can delete abuseReport ( default : nobody )
  - **faqs.userCanCreate** - Whether user can create FAQ ( default : nobody )
  - **faqs.userCanEdit** - Whether user can edit FAQ, currently this also means delete ( default : nobody )
+
+March 2019 - this branch on github/jlevym is for codeship builds
