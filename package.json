@@ -4,7 +4,15 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "grunt jshint testBefore default testAfter"
+    "test": "grunt jshint testBefore default testAfter",
+    "prebuild": "npm run cleanup",
+    "build": "jet steps --ci-build-id=001 build-lergo",
+    "setup": "jet load lergo-build",
+    "env:encrypt": "jet encrypt dev/env.decrypted env.encrypted",
+    "env:decrypt": "jet decrypt env.encrypted dev/env.decrypted",
+    "cleanup": "jet cleanup",
+    "pretestme:decrypt": "npm run env:decrypt",
+    "testme:decrypt": "source dev/env.decrypted && openssl aes-256-cbc -d -a -in scripts/testMe.json.enc -out dev/testMe.json -pass pass:$TESTME_KEY"
   },
   "dependencies": {
     "async": "2.1.4",

@@ -17,3 +17,5 @@ nohup.out
 .idea
 coverage
 build/vagrant/aws
+codeship.aes
+env.decrypted
