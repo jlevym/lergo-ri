@@ -34,7 +34,6 @@
     "loggly": "^1.1.1",
     "method-override": "2.3.10",
     "minimatch": "^3.0.3",
-    "mocha": "3.2.0",
     "mongodb": "2.2.22",
     "mongoose": "4.9.5",
     "node-sass": "4.5.2",
@@ -67,7 +66,7 @@
     "istanbul": "~0.4.5",
     "jshint-stylish": "~2.2.1",
     "matchdep": "~1.0.1",
-    "mocha": "*",
+    "mocha": "^6.0.2",
     "sinon": "~1.12.2"
   },
   "engines": {
