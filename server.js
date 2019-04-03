@@ -105,7 +105,7 @@ app.get('/swagger', function (req, res, next) {
 });
 
 // Serve up swagger ui at /docs via static route
-var docsHandler = express.static('/swagger', __dirname + '/../../swagger-ui/');
+var docsHandler = express.static( __dirname + '/../../swagger-ui/');
 app.get(/^\/docs(\/.*)?$/, function (req, res, next) {
     if (req.url === '/docs') { // express static barfs on root url w/o trailing slash
         res.writeHead(302, { 'Location': req.url + '/' });
