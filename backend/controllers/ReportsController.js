@@ -217,7 +217,7 @@ exports.readReportById = function (req, res) {
 
 exports.getStudents = function (req, res) {
 
-    var like = req.param('like');
+    var like = req.param.like;
     like = new RegExp(like, 'i');
 
     Report.connect(function (db, collection) {
@@ -240,7 +240,7 @@ exports.getStudents = function (req, res) {
 
 exports.getClasses = function (req, res) {
 
-    var like = req.param('like');
+    var like = req.param.like;
     like = new RegExp(like, 'i');
 
     Report.connect(function (db, collection) {
@@ -450,7 +450,7 @@ exports.deleteReport = function (req, res) {
 
 
 exports.findReportLessonsByName = function (req, res) {
-    var like = req.param('like');
+    var like = req.param.like;
     var reportType = req.param('reportType');
     like = new RegExp(like, 'i');
     var agg = [{

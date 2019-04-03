@@ -32,7 +32,7 @@ exports.getTopTags = function (req, res) {
 //  db.lessons.aggregate( { $unwind : '$tags' },  { $match : {'tags.label' : /tom/i } }, { $group : { _id : '$tags.label' } })
 exports.getTagsByFilter = function (req, res) {
 
-    var like = req.param('like');
+    var like = req.param.like;
     like = new RegExp(like, 'i');
 
     var lessonsId = req.getQueryList('lessonsId');

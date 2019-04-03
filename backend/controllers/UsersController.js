@@ -263,7 +263,7 @@ exports.findUsersById = function (req, res) {
 };
 
 exports.getUsernames = function (req, res) {
-    var like = req.param('like');
+    var like = req.param.like;
     like = new RegExp(like, 'i');
 
     User.connect(function (db, collection) {
