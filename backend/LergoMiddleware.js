@@ -276,12 +276,13 @@ exports.queryObjParsing = function queryObjParsing ( req, res, next ){
     try {
 
         logger.debug('manipulating query object on request');
-        if ( !req.param('query')){
+        if ( !req.param.query){
             res.status(400).send('query obj required but missing on request');
             return;
         }
 
-        var queryObj = req.param('query');
+       /*  var queryObj = req.param('query'); */
+       var queryObj = req.param.query;
         if ( typeof(queryObj) === 'string' ){
             queryObj = JSON.parse(queryObj);
         }
