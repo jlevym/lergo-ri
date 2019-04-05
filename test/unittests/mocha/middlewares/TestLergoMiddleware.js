@@ -241,9 +241,6 @@ describe('LergoMiddleware', function () {
         }); */
 
         it('should do the same for strings', function(){
-            /* request.param = sinon.spy(function(){
-                return JSON.stringify({ 'filter' : { 'dollar_exists' : { 'name': true} } } );
-            }); */
 
             request.param.query = '{"filter":{"$exists":{"name":true}}}';
             LergoMiddleware.queryObjParsing( request, response, next );
