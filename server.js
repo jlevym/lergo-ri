@@ -92,6 +92,7 @@ app.use(lergoMiddleware.addGetQueryList);
 app.use(lergoMiddleware.emailResources);
 app.use(errorHandler({ dumpExceptions: true, showStack: true }));
 
+app.use( require('request-param')() );
 app.use('/backend', backendHandler);
 app.use('/swagger-docs', swaggerAppHandler);
 // Routes
