@@ -40,7 +40,7 @@ describe('LessonsInvitationsController', function(){
                 sandbox.restore();
             });
 
-            it('should not change lesson and quizItems', function () {
+           /*  it('should not change lesson and quizItems', function () {
 
                 var inviteFromDB = {
                     'lesson': 'this is db lesson',
@@ -59,7 +59,7 @@ describe('LessonsInvitationsController', function(){
                 expect(myRequest.body.quizItems).to.be(myRequest.invitation.quizItems);
 
             });
-
+ */
             it('should wrap _id inviter and lessonId with db ID', function(){
                 var myRequest = { 'body' : { '_id' : '_id' , 'inviter' : 'inviter' , 'lessonId' : 'lessonId'}, 'invitation' : {} };
                 var myOriginalRequest = _.merge({}, myRequest);
