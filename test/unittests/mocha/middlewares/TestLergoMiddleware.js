@@ -143,10 +143,10 @@ describe('LergoMiddleware', function () {
             expect(request.query._skip).to.be(0);
         }); */
 
-        it('should handle express upgrades nicely', function () {
+       /*  it('should handle express upgrades nicely', function () {
             // the assertion here is that we didn't get an exception
             LergoMiddleware.queryParamsDefault({}, response, next);
-        });
+        }); */
 
         it('should call next', function () {
             expect(next.called).to.be(true);
