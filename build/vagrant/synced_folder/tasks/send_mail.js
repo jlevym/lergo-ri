@@ -13,7 +13,7 @@ var transporter = nodemailer.createTransport(ses({
 
 transporter.sendMail({
     from: '4lergo@gmail.com',
-    to: 'jlevym.com',
+    to: 'jlevym@gmail.com',
     subject: `lergopro has been upgraded`,
     text: `lergopro has been upgraded with the latest commit. The Build number is $BUILD_NUMBER`
 });
