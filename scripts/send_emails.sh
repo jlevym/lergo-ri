@@ -7,9 +7,10 @@ nvm install
 
 export accessKeyId=$accessKeyId
 export secretAccessKey=$secretAccessKey
-export CI_COMMIT_MESSAGE=$CI_COMMIT_MESSAGE
-export CI_TIMESTAMP=$CI_TIMESTAMP
+export CI_COMMIT_MESSAGE=${CI_COMMIT_MESSAGE: '-skip ci'}
+export CI_TIMESTAMP=${CI_STRING_TIME:-local-build-id}
 
+cat tmp/artifacts/temp_build_number.txt
 
 echo 'get the build number from tmp file'
 export BUILD_NUMBER=$(cat tmp/artifacts/temp_build_number.txt);

@@ -35,6 +35,9 @@ echo $BUILD_NUMBER > build-tracker.txt
 echo 'writting BUILD_NUMBER to tmp file to be used by send_mail'
 echo $BUILD_NUMBER > ../lergo-ri/tmp/artifacts/temp_build_number.txt
 
+echo 'updated content of temp_build_number.txt'
+cat ../lergo-ri/tmp/artifacts/temp_build_number.txt
+
 echo upload indexed build number to s3
 aws s3 cp build-tracker.txt s3://lergopro-backups/artifacts/build-number-tracker/build-tracker.txt
 
