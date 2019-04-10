@@ -5,6 +5,8 @@ cd lergo-ri
 source ~/.nvm/nvm.sh
 nvm install
 echo show present number in temp_build_number
+ls /
+echo '/artifacts/temp_build_number.txt'
 cat /artifacts/temp_build_number.txt
 export accessKeyId=$accessKeyId
 export secretAccessKey=$secretAccessKey
