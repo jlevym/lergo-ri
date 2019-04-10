@@ -6,8 +6,10 @@ WORKDIR ${workdir}
 
 #lergo-ri and lergo-protractor-tests from github/jlevym
 #RUN git clone -b upgrade-lergo-ri-npm-v2 --single-branch https://github.com/jlevym/lergo-ri.git
+
 RUN git clone https://github.com/jlevym/lergo-ri.git
-#RUN git clone https://github.com/lergo/lergo-ui.git
+RUN git clone https://github.com/lergo/lergo-ui.git
+
 # RUN git clone https://github.com/jlevym/lergo-protractor-tests.git
 
 COPY scripts/install_ri.sh ${workdir}/lergo-build/scripts/install_ri.sh
