@@ -1,6 +1,7 @@
 var nodemailer = require('nodemailer');
 var ses = require('nodemailer-ses-transport');
 
+console.log( 'accessKeyId:', $accessKeyId, 'and AWS_ACCESS_KEY_ID', $AWS_ACCESS_KEY_ID );
 // the aws accessKey and secretAccessKey are from lergopro
 var transporter = nodemailer.createTransport(ses({
     accessKeyId: $accessKeyId,
