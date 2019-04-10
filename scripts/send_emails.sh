@@ -5,28 +5,15 @@ cd lergo-ri
 source ~/.nvm/nvm.sh
 nvm install
 
-echo 96 > temp_build_number.txt
+echo 96 > tmp/artifacts/temp_build_number.txt
 
 echo 'get the build number from tmp file'
-export build_number=$(cat temp_build_number);
 
-echo $BUILD_NUMBER > temp_build_number.txt
+export BUILD_NUMBER=$(cat tmp/artifacts/temp_build_number.txt);
 
-var nodemailer = require('nodemailer');
-var ses = require('nodemailer-ses-transport');
+echo $BUILD_NUMBER > tmp/artifacts/temp_build_number.txt
 
-// the aws accessKey and secretAccessKey are from lergopro
 
-var transporter = nodemailer.createTransport(ses({
-    accessKeyId: $accessKeyId,
-    secretAccessKey: $secretAccessKey,
-    region : "eu-west-1"
-
-}));
-
-transporter.sendMail({
-    from: '4lergo@gmail.com',
-    to: 'jlevym.com',
-    subject: `lergopro has been upgraded`,
-    text: `lergopro has been upgraded with the latest commit. The Build number is $BUILD_NUMBER`
-  });
+cd /build/vagrant/synced_folder/tasks
+ls
+node send_mail.js
