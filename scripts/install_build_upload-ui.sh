@@ -16,13 +16,7 @@ echo get the next build number from build-tracker
 aws s3 cp s3://lergopro-backups/artifacts/build-number-tracker/build-tracker.txt build-tracker.txt
 CURRENT_BUILD_ID=`cat build-tracker.txt`
 
-
 hash='#';
-
-# echo finding current build number and indexing by 1
-# BUILD_ID_URL="https://s3-eu-west-1.amazonaws.com/lergopro-backups/artifacts/latest/build.id"
-# CURRENT_BUILD_ID=`wget --no-cache --no-check-certificate -O - $BUILD_ID_URL`
-
 
 echo check if build number,  $CURRENT_BUILD_ID  is an integer
 if [[ ! "$CURRENT_BUILD_ID" =~ ^[0-9]+$ ]]; then 
@@ -32,10 +26,6 @@ fi
 export BUILD_NUMBER=$((CURRENT_BUILD_ID + 1))
 echo $BUILD_NUMBER > build-tracker.txt
 
-#echo 'writing BUILD_NUMBER to tmp file to be used by send_mail'
-#rm -rf /tmp_build
-#mkdir /tmp_build
-#touch /tmp_build/build_number.txt
 echo $BUILD_NUMBER > /tmp_build/build_number.txt
 
 echo 'updated content of build_number.txt'
@@ -106,7 +96,7 @@ echo changing bucket name to lergopro-backups
 sed -i 's/lergo-backups/lergopro-backups/g' Gruntfile.js
 sed -i 's/process.env.JOB_NAME/"build-lergopro"/g' Gruntfile.js
 
-  #g runt s3:uploadArtifacts
-  # grunt s3:uploadArtifactsLatest
+  grunt s3:uploadArtifacts
+  grunt s3:uploadArtifactsLatest
 popd
 
