@@ -32,10 +32,10 @@ fi
 export BUILD_NUMBER=$((CURRENT_BUILD_ID + 1))
 echo $BUILD_NUMBER > build-tracker.txt
 
-echo 'writing BUILD_NUMBER to tmp file to be used by send_mail'
-rm -rf /tmp_build
-mkdir /tmp_build
-touch /tmp_build/build_number.txt
+#echo 'writing BUILD_NUMBER to tmp file to be used by send_mail'
+#rm -rf /tmp_build
+#mkdir /tmp_build
+#touch /tmp_build/build_number.txt
 echo $BUILD_NUMBER > /tmp_build/build_number.txt
 
 echo 'updated content of build_number.txt'
