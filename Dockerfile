@@ -5,10 +5,10 @@ ARG workdir=/app/lergo
 WORKDIR ${workdir}
 
 #lergo-ri and lergo-protractor-tests from github/jlevym
-RUN git clone -b testing_volumes --single-branch https://github.com/jlevym/lergo-ri.git
+# RUN git clone -b testing_volumes --single-branch https://github.com/jlevym/lergo-ri.git
 
-# RUN git clone https://github.com/jlevym/lergo-ri.git
-# RUN git clone https://github.com/lergo/lergo-ui.git
+RUN git clone https://github.com/jlevym/lergo-ri.git
+RUN git clone https://github.com/lergo/lergo-ui.git
 
 # RUN git clone https://github.com/jlevym/lergo-protractor-tests.git
 

@@ -1,15 +1,15 @@
 #- name: build-lergo
 #  service: lergo-build
 #  command: bash -c /app/lergo/lergo-build/scripts/email_test.sh
-#- name: install_build_upload-ui
-#  service: lergo-build
-#  command: bash -c /app/lergo/lergo-build/scripts/install_build_upload-ui.sh
+- name: install_build_upload-ui
+  service: lergo-build
+  command: bash -c /app/lergo/lergo-build/scripts/install_build_upload-ui.sh
 - name: test-ri 
   service: lergo-build
   command: bash -c /app/lergo/lergo-build/scripts/test_ri.sh
-#- name: upgrade_lergo
-#  service: lergo-build 
-#  command: bash -c /app/lergo/lergo-build/scripts/upgrade_lergo.sh
+- name: upgrade_lergo
+  service: lergo-build 
+  command: bash -c /app/lergo/lergo-build/scripts/upgrade_lergo.sh
 - name: send-emails 
   service: lergo-build
   command: bash -c /app/lergo/lergo-build/scripts/send_emails.sh

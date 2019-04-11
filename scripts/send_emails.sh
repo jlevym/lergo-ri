@@ -15,6 +15,5 @@ echo 'get the build number from build_number.txt'
 export BUILD_NUMBER=$(cat /tmp_build/build_number.txt);
 
 cd build/vagrant/synced_folder/tasks
-echo 'build number taken from build_number.txt is' $BUILD_NUMBER
 
-# node send_emails.js
+node send_emails.js
