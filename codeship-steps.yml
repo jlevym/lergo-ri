@@ -1,9 +1,9 @@
-- name: build-lergo
-  service: lergo-build
-  command: printenv
-#- name: install_build_upload-ui
+#- name: build-lergo
 #  service: lergo-build
-#  command: bash -c /app/lergo/lergo-build/scripts/install_build_upload-ui.sh
+#  command: bash -c /app/lergo/lergo-build/scripts/email_test.sh
+- name: install_build_upload-ui
+  service: lergo-build
+  command: bash -c /app/lergo/lergo-build/scripts/install_build_upload-ui.sh
 #- name: test-ri 
 #  service: lergo-build
 #  command: bash -c /app/lergo/lergo-build/scripts/test_ri.sh

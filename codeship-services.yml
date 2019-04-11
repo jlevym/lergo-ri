@@ -3,7 +3,7 @@ lergo-build:
     image: lergo-build
     dockerfile: Dockerfile
     volumes:
-      - ./tmp/artifacts:/artifacts
+      - ./tmp/build_artifacts:/tmp_build
   encrypted_env_file: env.encrypted
 lergo-test:
   build:

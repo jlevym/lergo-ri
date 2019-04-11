@@ -32,11 +32,13 @@ fi
 export BUILD_NUMBER=$((CURRENT_BUILD_ID + 1))
 echo $BUILD_NUMBER > build-tracker.txt
 
-echo 'writting BUILD_NUMBER to tmp file to be used by send_mail'
-echo $BUILD_NUMBER > ../lergo-ri/tmp/artifacts/temp_build_number.txt
+echo 'writing BUILD_NUMBER to tmp file to be used by send_mail'
+mkdir /tmp_build
+touch /tmp_build/build_number.txt
+echo $BUILD_NUMBER > /tmp_build/build_number.txt
 
-echo 'updated content of temp_build_number.txt'
-cat ../lergo-ri/tmp/artifacts/temp_build_number.txt
+echo 'updated content of build_number.txt'
+cat /tmp_build/build_number.txt
 
 echo upload indexed build number to s3
 aws s3 cp build-tracker.txt s3://lergopro-backups/artifacts/build-number-tracker/build-tracker.txt
@@ -103,7 +105,7 @@ echo changing bucket name to lergopro-backups
 sed -i 's/lergo-backups/lergopro-backups/g' Gruntfile.js
 sed -i 's/process.env.JOB_NAME/"build-lergopro"/g' Gruntfile.js
 
-  grunt s3:uploadArtifacts
-  grunt s3:uploadArtifactsLatest
+  #g runt s3:uploadArtifacts
+  # grunt s3:uploadArtifactsLatest
 popd
 
