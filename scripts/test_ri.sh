@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo just for testing emails
+echo 'writing BUILD_NUMBER to tmp file to be used by send_mail'
+mkdir /tmp_build
+touch /tmp_build/build_number.txt
+echo 144 > /tmp_build/build_number.txt
+
 echo build lergo-ri
 cd lergo-ri
 source ~/.nvm/nvm.sh
