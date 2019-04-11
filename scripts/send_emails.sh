@@ -11,7 +11,6 @@ export CI_COMMIT_MESSAGE=$CI_COMMIT_MESSAGE
 export CI_TIMESTAMP=${CI_STRING_TIME:-local-build-id}
 
 
-
 echo 'get the build number from build_number.txt'
 export BUILD_NUMBER=$(cat /tmp_build/build_number.txt);
 
